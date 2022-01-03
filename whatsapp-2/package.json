@@ -12,6 +12,7 @@
     "@emotion/styled": "^11.6.0",
     "@material-ui/core": "^5.0.0-beta.5",
     "@material-ui/icons": "^5.0.0-beta.5",
+    "babel-plugin-styled-components": "^2.0.2",
     "email-validator": "^2.0.4",
     "firebase": "^9.6.1-2021119184024",
     "next": "12.0.7",
