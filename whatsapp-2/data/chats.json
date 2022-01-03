@@ -1,0 +1,27 @@
+[
+    {
+        "timestamp": {
+            "seconds": 1633358405,
+            "nanoseconds": 777000000
+        },
+        "users": [
+            "emma@gmail.com",
+            "alan@gmail.com"
+        ],
+        "photoURL": "https://images.pexels.com/photos/1499327/pexels-photo-1499327.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+        "name": "Emma",
+        "latestMessage": "fine, thank you"
+    },
+    {
+        "latestMessage": "greate",
+        "timestamp": {
+            "seconds": 1633355262,
+            "nanoseconds": 882000000
+        },
+        "name": "James",
+        "users": [
+            "alan@gmail.com",
+            "james@gmail.org"
+        ]
+    }
+]

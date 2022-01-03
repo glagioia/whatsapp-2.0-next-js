@@ -15,6 +15,7 @@
     "babel-plugin-styled-components": "^2.0.2",
     "email-validator": "^2.0.4",
     "firebase": "^9.6.1-2021119184024",
+    "moment": "^2.29.1",
     "next": "12.0.7",
     "next-firebase-auth": "^1.0.0-canary.5",
     "react": "17.0.2",

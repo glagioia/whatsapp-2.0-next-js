@@ -6,7 +6,8 @@ import SearchIcon from '@material-ui/icons/Search';
 import * as EmailValidator from 'email-validator';
 import NotificationsOffIcon from '@material-ui/icons/NotificationsOff';
 import ArrowForwardIosIcon from '@material-ui/icons/ArrowForwardIos';
-
+import chats from '../data/chats.json';
+import Chat from './Chat';
 
 function Sidebar() {
 
@@ -50,26 +51,30 @@ function Sidebar() {
                 </NotificationAvatar>
                 <NotificationText>
                     <div>Get Notified of New Messages</div>
-                    <div style={{display:'flex', alignItems:'center'}}>
+                    <div style={{ display: 'flex', alignItems: 'center' }}>
                         <a href="#">Turn off Notifications</a>
                         <IconButton>
-                            <ArrowForwardIosIcon style={{width:15, height:15}} />
+                            <ArrowForwardIosIcon style={{ width: 15, height: 15 }} />
                         </IconButton>
 
                     </div>
                 </NotificationText>
             </Notification>
+            <SidebarButton onClick={createChat}>Start a new chat</SidebarButton>
 
-            <Search>
+            <SearchChat>
                 <SearchBar>
                     <SearchIcon />
                     <SearchInput placeholder="Search or start new chat" />
                 </SearchBar>
+            </SearchChat>
+            {chats.map(chat => (<Chat
+                latestMessage={chat.latestMessage}
+                name={chat.name}
+                timestamp={chat.timestamp}
+                photoURL={chat.photoURL}
+            />))}
 
-
-            </Search>
-
-            <SidebarButton onClick={createChat}>Start a new chat</SidebarButton>
 
 
             {/*list of chats*/}
@@ -88,7 +93,7 @@ const Container = styled.div`
     height: 100%;
 `;
 
-const Search = styled.div`
+const SearchChat = styled.div`
     display: flex;
     align-items: center;
     background-color: #f6f6f6;
