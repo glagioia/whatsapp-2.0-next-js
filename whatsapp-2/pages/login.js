@@ -1,33 +1,55 @@
 import Head from 'next/head';
+import Image from 'next/image';
 import styled from "styled-components";
 import { Button } from '@material-ui/core';
+import GoogleIcon from '@material-ui/icons/Google';
+import { auth, provider } from '../firebase';
+import { signInWithPopup } from '@firebase/auth';
 
-function Login(){
-    return(
+
+const Login = () => {
+    const loginWithGoogle = () => {
+        signInWithPopup(auth, provider);
+    }
+
+    return (
         <Container>
             <Head>
                 <title>Login</title>
             </Head>
 
-            <LoginContainer>
-                <Logo src="./logo.png"/>
-                <Button variant="outlined">Sign in with Google</Button>
-            </LoginContainer>
+            <Loginn>
+                <Image src="/whatsicon.png" height={100} width={100} />
+                <Button style={{ color: "gray" }} startIcon={<GoogleIcon />}
+                    onClick={loginWithGoogle}>
+                        Login with Google</Button>
+            </Loginn>
 
         </Container>
     )
 
-    
+
 }
 
 export default Login;
 
 const Container = styled.div`
-
-`;	
-
-const LoginContainer = styled.div`
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #5b2cd2;
+    width: 100vw;
 `;
 
+
+
+const Loginn = styled.div`
+    padding: 30px;
+    display: flex;
+    gap: 20px;
+    background-color: white;
+    border-radius: 15px;
+`;
 
 const Logo = styled.img``;

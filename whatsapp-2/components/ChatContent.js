@@ -112,11 +112,10 @@ const Input = styled.input`
 
 const MessageContainer = styled.div`
     padding: 20px;
-    background-color: #a590dc;
+    background-color: #e5ded8;
     flex: 1;
     background-image: url('/background.png');
     background-attachment: fixed;
     background-repeat: repeat;
-    
 
  `;

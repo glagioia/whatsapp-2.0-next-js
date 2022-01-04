@@ -1,6 +1,9 @@
 import * as React from 'react';
 import {IconButton, Menu, MenuItem} from '@material-ui/core';
 import MoreVertIcon from '@material-ui/icons/MoreVert';
+import { auth } from '../firebase';
+import { signOut } from '@firebase/auth';
+
 
 export default function BasicMenu() {
   const [anchorEl, setAnchorEl] = React.useState(null);
@@ -42,7 +45,7 @@ export default function BasicMenu() {
         <MenuItem onClick={handleClose}>Archive</MenuItem>
         <MenuItem onClick={handleClose}>Starred</MenuItem>
         <MenuItem onClick={handleClose}>Settings</MenuItem>
-        <MenuItem onClick={handleClose}>Logout</MenuItem>
+        <MenuItem onClick={() => signOut(auth)}>Logout</MenuItem>
       </Menu>
     </>
   );
